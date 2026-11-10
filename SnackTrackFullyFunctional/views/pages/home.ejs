@@ -1,0 +1,266 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<% console.log(color); %>
+<% if(color){ %>
+	<% var script_text = '<script>document.body.style.backgroundColor = "#' + color + '";</script>'; %>
+    <%- script_text %>
+<% }%>
+
+<% console.log(color); %>
+<% if(color){ %>
+	<% var script_text = '<script>document.getElementById("head").style.backgroundColor = "#' + color + '";</script>'; %>
+    <%- script_text %>
+<% }%>
+
+<div class="container-fluid" >
+	<!-- Modal Add Snack-->
+	<div class="modal fade" id="addHouseModal" tabindex="-1" role="dialog" aria-labelledby="addFriendModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content" style="justify-content: center;" >
+		  <div class="modal-header" style="height: 100%;" >
+		  <h1 class="modal-title" id="addFriendModalLabel">Add House</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body" style="justify-content: center; text-align: center;">
+		  <%- include('../partials/addHouse') %>
+		  </div>
+		  <div class="modal-footer" style="height: 100%" >
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	  </div>
+	  <div class="modal fade" id="createHouseModal" tabindex="-1" role="dialog" aria-labelledby="addFriendModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content" style="justify-content: center;" >
+		  <div class="modal-header" style="height: 100%;" >
+		  <h1 class="modal-title" id="addFriendModalLabel">Create Household</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body" style="justify-content: center; text-align: center;">
+		  <%- include('../partials/createHouse') %>
+		  </div>
+		  <div class="modal-footer" style="height: 100%" >
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	  </div>
+
+	<div class="row" style="padding-top: 2.5vh; padding-bottom: 2.5vh; margin-bottom: 2.5vh;">
+
+		<div class="col">
+			
+		</div>
+
+		<div class="col-8" style="background: #FAF9F6;">
+			<div class="row" style="padding-top: 1.5vh; padding-bottom: 2.5vh; border-bottom: 2px solid #86b9bd; max-height: 85%;">
+				<div class="col-3">
+				  <h4  style="text-align:start; color:gray; font-weight: bolder;">Your Households</h4>
+				</div>
+
+				<div class="col-3">
+			
+				</div>
+				<div class="col-3">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHouseModal" style="text-align:start; color:#FAF9F6; background-color: gray; float: right; margin-right: 2.1vw; width: 200px; text-align: center; border: 1px solid lightgray; ">
+						Add Household
+					</button>
+				</div>
+				<div class="col-3">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createHouseModal" style="text-align:start; color:#FAF9F6; background-color: gray; float: right; margin-right: 2.1vw; width: 200px; text-align: center; border: 1px solid lightgray; ">
+						Create Houshold
+					</button>
+				</div>
+			  </div>
+		  	<div class="containerScroll__home" style="padding-top: 1vh; padding-bottom: 2.5 vh;">
+				<% 
+        if(alreadyExisted == true) 
+        { %>
+          <style>
+            /* Popup container - can be anything you want */
+            .popup {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+            
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: visible;
+              width: 160px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -80px;
+            }
+            
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #555 transparent transparent transparent;
+            }
+            
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+            
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
+            </style>
+
+        <div id="popupDiv" style="margin-left: 50%; margin-top: 5%;" >
+          <div class="popup" id="notadded">
+              <span class="popuptext" id="myPopup" style="text-align: center;">Home Name Taken!</span>
+            </div>
+            <script>
+              const myTimeout = setTimeout(dummy, 5000);
+        
+              function dummy() {
+                document.getElementById("notadded").innerHTML = '';
+                document.getElementById("popupDiv").style="margin-top: 0%; margin-bottom: 0%;";
+                document.getElementById("popupDiv").innerHTML='';
+              }
+            </script>
+        </div>
+        <%}%>
+				<% if(data) 
+				{  
+					
+				  var i = 0;
+				  data.forEach(function(item)
+					{    
+					  i = i + 1;
+					  %>
+					  <div class="modal fade" id="addSnackModal<%-item.householdid%>" tabindex="-1" role="dialog" aria-labelledby="addSnackModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						<div class="modal-content" style="justify-content: center;" >
+						  <div class="modal-header" style="height: 100%;" >
+						  <h1 class="modal-title" id="addFriendModalLabel">Add Snack to Household</h1>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						  </div>
+						  <div class="modal-body" style="justify-content: center; text-align: center;">
+							<div style="justify-content:center">
+								<div class="container-fluid" style="height: 80vh; justify-content: center; margin-top: auto;">
+									<form action="/home/addsnack" method="post" id="playerAdd">
+										<input style="visibility:hidden" id="receive" name="householdid" value = "<%- item.householdid %>"><br>
+										<input type="text" step="0.01" id="paymentAmount" name="snack" placeholder="Snack Name" style = "text-align: center; margin-top: 35vh;  width: 200px;"><br>
+										<input type="submit" style="width: 200px;" value="Add Snack">
+									</form>
+								</div>
+							</div>
+						  </div>
+						  <div class="modal-footer" style="height: 100%" >
+						  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						  <button type="button" class="btn btn-primary">Save changes</button>
+						  </div>
+						</div>
+						</div>
+					  </div>
+					 	 <div class="card" style="width: 100%; justify-content: center;">
+							<div class="row" style="padding-top: 2.5vh;">
+								<div class="col mb-6">
+									<img src="../init_data/default_house.jpg" class="card-img-top" size alt="..." style="width:300px; height:300px; margin-left: 2vw;">
+								</div>
+								<div class="col mb-3">	
+									
+								</div>
+								<div class="col mb-3" style="justify-content:end; text-align:end;">	
+									<form action="/home/delete" method="post" id="playerinfo_form-3">
+										<button type="submit" class="btn btn-primary" style="width: 200px; color:#FAF9F6; background-color: grey; margin-top: 1vh; margin-right: 1vw; text-align: center; border: 1px solid black; ">Remove Household</button><br>
+										<input style="visibility:hidden" id="receive" name="household_id" value = "<%- item.householdid %>">
+									  </form>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col mb-4">
+
+								</div>
+								<div class = "col mb-4">
+									<div class="card-body" style="justify-content:center; text-align: center;">
+										<h5 class="card-title"><%-item.householdname%></h5>
+										<% if(item.snacks == null)
+										{%>
+											<p class="card-text" style="font-size: 16px;" >No snacks in this household.</p>
+										<%}
+										else{%>
+										<p class="card-text" style="font-size: 16px;" >Snacks: <%-(String(item.snacks)).replace(/,/g, ', ')%></p>
+										<%}%>
+										<div style="text-align: center;  justify-content: center;">
+										<form action="/individualHome" style="text-align:center; justify-content: center;" method="post" id="playerinfo_form-3">
+											<input style="visibility:hidden" id="receive" name="home_id" value = "<%- item.householdid %>"><br>
+											<button type="submit" class="btn btn-primary" style="width: 400px; color:#FAF9F6; background-color: grey; margin-top: 1vh;  text-align: center; border: 1px solid black; ">Go to <%-item.householdname%></button><br>
+										</form>
+										
+										</div>
+										<div style="text-align:center; justify-content:center">
+											<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSnackModal<%-item.householdid%>" style="width: 400px; color:#FAF9F6; background-color: grey; margin-top: 1vh;  text-align: center; border: 1px solid black; ">
+												Add Snack
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="col mb-4">
+
+								</div>
+							</div>
+						</div>
+					  
+						<%});
+					}
+					if(i == 0)
+					{ %>
+						<div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+						<div class="row no-gutters">
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-8" style="justify-content:center; text-align:center ">
+							<div class="card-body">
+								<h5 class="card-title" style="justify-content:center; text-align:center;">No Households Yet :(</h5>
+							</div>
+							</div>
+							</div>
+						</div>
+					<%}%>
+			</div>
+		</div>
+		<div class="col">
+			<% console.log(color); %>
+			<% if(color){ %>
+				<% var script_text = '<script>document.body.style.backgroundColor = "#' + color + '";</script>'; %>
+				<%- script_text %>
+			<% }%>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer') %>

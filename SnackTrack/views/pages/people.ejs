@@ -1,0 +1,249 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<style>
+  .btn-primary {
+    color: #fff;
+    background-color: #0495c9;
+    border-color: #357ebd; /*set the color you want here*/
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+</style>
+
+	<div class="container-fluid">
+    <!-- Modal -->
+    <div class="modal fade" id="addFriendModal" tabindex="-1" role="dialog" aria-labelledby="addFriendModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title" id="addFriendModalLabel">Add Friend</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <%- include('../partials/addfriend') %>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top: 2.5vh;">
+      <div class="col">
+        
+      </div>
+      <div class="col-8" style="background: #FAF9F6;">
+        <div class="row" style="padding-top: 1.5vh; padding-bottom: 1.5vh; border-bottom: 2px solid #86b9bd; max-height: 6vh;">
+          <div class="col-3">
+            <h4  style="text-align:start; color:gray; font-weight: bolder;">Your Friends</h4>
+          </div>
+          <div class="col-7">
+            
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFriendModal" style="text-align:start; color:#FAF9F6; background-color: gray; float: right; margin-right: 2.1vw; width: 91%; text-align: center; border: 1px solid lightgray; ">
+              Add Friend
+            </button>
+          </div>
+        </div>
+        <div class="containerScroll__users" style="padding-top: 1vh;">
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%; ">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 100%; max-height: 20%; padding-top: 2vh; padding-bottom: 2vh; ">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <img src="../../resources/img/user__default.png" class="card-img" alt="profile img" style="height:100px; width:100px; display: table-cell; margin: auto; vertical-align: middle; border-radius: 50%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">USER NAME</h5>
+                  <p class="card-text">This is a wider card with supporting text</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+                <div style="height: 20%;"></div>
+                <button type="button" class="btn btn-primary btn-lg" style="width: 80%; height: 40%; font-size: small; background-color: #86b9bd; border: 1px solid lightgray;" > Request Payment </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+	</div>
+
+
+<%- include('../partials/footer') %>

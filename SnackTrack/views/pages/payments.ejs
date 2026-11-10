@@ -1,0 +1,240 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<div class="container-fluid">
+	<!-- Modal Request Payment-->
+    <div class="modal fade" id="requestPaymentModal" tabindex="-1" role="dialog" aria-labelledby="requestPaymentModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="requestPaymentModalLabel">Request Payment</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/requestpayment') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<!-- Modal Make Payment -->
+    <div class="modal fade" id="makePaymentModal" tabindex="-1" role="dialog" aria-labelledby="makePaymentModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="makePaymentModalLabel">Make Payment</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/makepayment') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<!-- Modal Add Venmo-->
+    <div class="modal fade" id="addVenmoModal" tabindex="-1" role="dialog" aria-labelledby="addVenmoModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="addVenmoModalLabel">Add Venmo</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/addvenmo') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<!-- Modal Add Card-->
+    <div class="modal fade" id="addCardModal" tabindex="-1" role="dialog" aria-labelledby="addCardModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="addCardModalLabel">Add Card</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/addcard') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<!-- Modal Add Paypal-->
+    <div class="modal fade" id="addPaypalModal" tabindex="-1" role="dialog" aria-labelledby="addPaypalModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="addPaypalLabel">Add Paypal</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/addpaypal') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<div class="row" style="padding-top: 2.5vh;">
+		<div class="col">
+
+		</div>
+		<div class="col-8" style="background: #FAF9F6;">
+			<div class="row" style="padding-top: 1.5vh; padding-bottom: 1.5vh; border-bottom: 2px solid #86b9bd; max-height: 6vh;">
+				<div class="col-3">
+					<h4  style="text-align:start; color:gray; font-weight: bolder;"> Recent Payments</h4>
+				</div>
+				<div class="col-6">
+	  
+				</div>
+				<div class="col">
+					<div class="dropdown" style="padding-left: 3.5vw; ">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: gray;">
+							Add Payment Method
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="font-weight: bold; border: 1px solid #86b9bd;">
+							<a class="dropdown-item" data-toggle="modal" data-target="#addVenmoModal" style="border-bottom: 1px solid #86b9bd;">Add Venmo Account</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#addCardModal" style="border-bottom: 1px solid #86b9bd;">Add Card</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#addPaypalModal" >Add Paypal</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="containerScroll__payments" style="padding-top: 1vh; padding-bottom: 2.5 vh;">
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+				<div class = card style ="width: 100%;">
+					<div class="card-header">
+						Sara payed you +$5.00
+					</div>				
+					<h5 class="card-title" style="text-align:center"> Protein Shake </h5>
+					<p class="card-text" style="text-align:right"> February 27, 2022</p>
+				</div>
+			</div>
+			<div style="padding-top: 1vh; padding-bottom: 1vh; display: flex; justify-content: space-evenly; align-items: center; max-height: 6vh;">
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#makePaymentModal" style="background-color: #86b9bd; border: 1px solid lightgray;"> Make Payment </button>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestPaymentModal" style="background-color: #86b9bd; border: 1px solid lightgray;"> Request Payment </button>
+			</div>
+		</div>
+		<div class="col">
+
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer') %>

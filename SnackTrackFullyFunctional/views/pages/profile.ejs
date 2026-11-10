@@ -1,0 +1,98 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<% console.log(color); %>
+<% if(color){ %>
+	<% var script_text = '<script>document.body.style.backgroundColor = "#' + color + '";</script>'; %>
+    <%- script_text %>
+<% }%>
+
+<% console.log(color); %>
+<% if(color){ %>
+	<% var script_text = '<script>document.getElementById("head").style.backgroundColor = "#' + color + '";</script>'; %>
+    <%- script_text %>
+<% }%>
+<div class="row" style="margin-top: 2vh;">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4" style="background-color:white; border-radius:100px;">
+        <h1 style="text-align: center;">Hello <%- data %>!</h2>
+            <img src="<%- profilepic %>" class="card-img" alt="Pick profile image in settings!" style="height:150px; width:150px; display: table-cell; margin-left: 11vw; margin-bottom: 2vh; align-self: center; vertical-align: middle; border-radius: 50%;">
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+<div class="row" style="margin-top: 2vh;" >
+    <div class = "col-md-4">
+        
+    </div>
+    <div class="col-md-4" style="justify-content:center; text-align:center; background-color: white; border-radius:40px;">
+            <h5 style="margin-top: 2vh;">Pick your background color:</h5>
+            <form action="/pick_color" method="post">
+                <div class="form-group row">
+                    <div class="col-sm-10" style="text-align:center; justify-content:center">
+                        <input type="text" class="form-control" required name="color_name" id="color_name" style="margin-left: 2.5vw;" placeholder="Enter Hex Value of your custom color">
+                    </div>
+                </div>
+                <button type="submit" style="margin-bottom: 2vh;" class="btn btn-primary btn-block">Submit Color</button>
+            </form>
+    </div>
+    <div class="col-md-4" sytle="margin-bottom: 2vh" >
+    </div>
+</div>
+<div class="row" style="margin-top:2vh;" >
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4" style="justify-content:center; text-align:center; background-color: white; margin-bottom: 2vh; border-radius:40px;">
+        <h5 style="margin-top: 2vh;">Pick your profile picture:</h5>
+        <form action="/profile" method="post" >
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input type="radio" id="html" name="fav_language" required value="../../resources/img/cheeseburger.png">
+                    <label for="html">Picture 1: </label><br>
+                    <img src="../../resources/img/cheeseburger.png" width="150" height="150">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="radio" id="css" name="fav_language" value="../../resources/img/bacon.jpg">
+                    <label for="css">Picture 2: </label><br>
+                    <img src="../../resources/img/bacon.jpg" width="150" height="150">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="radio" id="html" name="fav_language" value="../../resources/img/cracker.jpg">
+                    <label for="html">Picture 3: </label><br>
+                    <img src="../../resources/img/cracker.jpg" width="150" height="150">
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 1vh">
+                    <div class="col-sm-4">
+                        <input type="radio" id="html" name="fav_language" value="../../resources/img/pizza.jpg">
+                        <label for="html">Picture 4: </label><br>
+                        <img src="../../resources/img/pizza.jpg" width="150" height="150">
+                      </div>
+                      <div class="col-sm-4">
+                        <input type="radio" id="html" name="fav_language" value="../../resources/img/icecream.png">
+                        <label for="html">Picture 5: </label><br>
+                        <img src="../../resources/img/icecream.png" width="150" height="150">
+                      </div>
+                      <div class="col-sm-4">
+                        <input type="radio" id="html" name="fav_language" value="../../resources/img/fruit.png">
+                        <label for="html">Picture 6: </label><br>
+                        <img src="../../resources/img/fruit.png" width="150" height="150">
+                      </div>
+
+                </div>
+              </div>
+              <input type="submit" style="margin-top: 3%; margin-bottom: 2vh;" value="Submit Profile Picture" class="btn btn-primary btn-block">
+		</form>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+</div>
+
+<%- include('../partials/footer') %>

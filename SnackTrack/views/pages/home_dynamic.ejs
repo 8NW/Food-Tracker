@@ -1,0 +1,79 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<div class="container-fluid" >
+	<!-- Modal Add Snack-->
+    <div class="modal fade" id="addSnackModal" tabindex="-1" role="dialog" aria-labelledby="addSnackModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		  <h1 class="modal-title" id="addPaypalLabel">Add Snack</h1>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		  </div>
+		  <div class="modal-body">
+			<%- include('../partials/addsnack') %>
+		  </div>
+		  <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+		</div>
+	</div>
+
+	<div class="row" style="padding-top: 2.5vh;">
+		<div class="col">
+			
+		</div>
+
+		<div class="col-8" style="background: #FAF9F6;">
+			<div class="row" style="padding-top: 1.5vh; padding-bottom: 1.5vh; border-bottom: 2px solid #86b9bd; max-height: 6vh;">
+				<div class="col-3">
+				  <h4  style="text-align:start; color:gray; font-weight: bolder;">Households</h4>
+				</div>
+
+				<div class="col-7">
+			
+				</div>
+			  </div>
+		  	<div class="containerScroll__home" style="padding-top: 1vh; padding-bottom: 2.5 vh;">
+				
+				<% if(data) 
+				{  
+					
+				  var i = 0;
+				  data.forEach(function(item)
+					{    
+					  i = i + 1;
+					  %>
+					 	 <div class="card" style="width: 100%;">
+							<div class="row" style="padding-top: 2.5vh;">
+								<div class="col mb-6">
+									<img src="../init_data/default_house.jpg" class="card-img-top" size alt="..." style="width:300px; height:300px;">
+								</div>
+								<div class="col mb-6">	
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSnackModal" style="text-align:start; color:#FAF9F6; background-color: gray; float: right; margin-top: 8vw; margin-right: 2.1vw; width: 91%; text-align: center; border: 1px solid lightgray; ">
+										Add Snack
+									</button>
+								</div>
+							</div>
+							<div class="card-body" style="justify-content:center; text-align: center;">
+								<h5 class="card-title"><%-item.householdname%></h5>
+								<p class="card-text" style="font-size: 16px;" >Snacks: <%-item.snacks%></p>
+								<a href="#" class="btn btn-primary" size = ""img src="../init_data/default_house.jpg">Go to <%-item.householdname%></a>
+							</div>
+						</div>
+					  
+						<%});
+					}%>
+			</div>
+		</div>
+		<div class="col">
+		  
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer') %>

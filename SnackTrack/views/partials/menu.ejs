@@ -1,0 +1,63 @@
+<style>
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color:  #FAF9F6;
+	  height: 4vh;
+	  vertical-align: middle;
+	}
+	
+	li {
+	  float: left;
+	}
+	
+	li a {
+	 	 display: block;
+	 	 color: black;
+	  	text-align: center;
+		justify-content: center;
+	 	padding-top: 1vh;
+		padding-bottom: 1vh;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	  	text-decoration: none;
+	}
+
+	li a:hover:not(.a__brand) {
+	  background-color:#FAF9F6;
+	  color: #86b9bd;
+	  border-left: 1px solid #86b9bd;
+	}
+	
+	li a:hover:not(.active, .a__brand) {
+	  background-color: #86b9bd;
+	  color: #FAF9F6;
+	  border-style: none;
+	}
+	
+	.active {
+		background-color: #86b9bd;
+		color: #FAF9F6;
+	}
+	
+
+	.li__brand {
+		text-align: center;
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		color: #f6e272;
+		font-weight: bolder;
+	}
+
+</style>
+<ul style="border-bottom: 2px solid #86b9bd;">
+	<li class="li__brand">SnackTrack</li>
+	<li><a href="/home">Home</a></li>
+	<li><a href="/people">People</a></li>
+	<li><a href="/payments">Payments</a></li>
+	<li style="float:right"><a class="active" href="/settings">Settings</a></li>
+</ul>
